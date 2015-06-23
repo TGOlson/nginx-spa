@@ -19,3 +19,26 @@ Example Dockerfile:
 FROM tgolson/nginx-spa
 ADD ./assets /assets
 ```
+
+### Advanced example using Docker Compose
+
+```
+proxy:
+  image: tgolson/nginx-spa
+  ports:
+    - "8080:8080"
+  volumes_from:
+    - client
+  links:
+    - api
+```
+
+In this example the `nginx-spa` container still forwards all request to an api container, but also finds the expected assets from the client container.
+
+Here is an example of the client container's `Dockerfile`.
+
+```
+FROM ubuntu
+ADD ./public /assets
+VOLUME /assets
+```
