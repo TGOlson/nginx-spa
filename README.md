@@ -2,6 +2,8 @@
 
 Configuration for an nginx supported single page app run on docker.
 
+Grab it from [docker hub](https://registry.hub.docker.com/u/tgolson/nginx-spa/).
+
 Requirements:
 
 1. Place all static assets in `/assets`. This will be the root static asset directory.
